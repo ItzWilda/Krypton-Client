@@ -1,8 +1,10 @@
-name: Build and Release Krypton Client
+name: Build Krypton Client
 
 on:
   push:
     branches: [ main ]
+  tags:
+    - 'v*'  # Trigger build when a version tag is pushed
 
 jobs:
   build:
@@ -29,11 +31,17 @@ jobs:
 
       - name: Build app
         run: npm run dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*  # Adjust this if you have other files like .exe, .dmg, etc.
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}  # This sets the environment variable for Electron Builder
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Make sure the secret is set up in your GitHub repository
 
       - name: Upload build files
         uses: actions/upload-artifact@v4
         with:
           name: krypton-build-${{ matrix.os }}
           path: dist/
+
