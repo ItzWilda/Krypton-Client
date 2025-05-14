@@ -7,20 +7,23 @@
     "dist": "electron-builder"
   },
   "build": {
-    "appId": "com.krypton.client",
+    "appId": "com.itzwilda.kryptonclient",
     "productName": "Krypton Client",
     "files": [
-      "**/*"
+      "dist/**/*",
+      "main.js",
+      "package.json"
     ],
+    "mac": {
+      "target": "dmg"
+    },
     "win": {
       "target": "nsis"
     },
     "linux": {
       "target": "AppImage"
     },
-    "mac": {
-      "target": "dmg"
-    }
+    "publish": null
   },
   "devDependencies": {
     "electron": "^28.1.0",
