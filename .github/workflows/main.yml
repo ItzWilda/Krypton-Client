@@ -37,14 +37,3 @@ jobs:
         with:
           name: krypton-build-${{ matrix.os }}
           path: dist/
-
-      - name: Create a GitHub release
-        id: release
-        run: |
-          TAG_NAME="v1.0.0"
-          RELEASE_NAME="Release $TAG_NAME"
-          BODY="Krypton Client release version $TAG_NAME."
-          gh release create $TAG_NAME dist/* --title "$RELEASE_NAME" --notes "$BODY"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
