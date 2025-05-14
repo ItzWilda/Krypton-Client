@@ -14,14 +14,18 @@
       "main.js",
       "package.json"
     ],
+    "icon": "assets/icons/krypton-logo",  // Path to your icon file (no extension)
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "icon": "assets/icons/krypton-logo.png"  // macOS icon (PNG)
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "assets/icons/krypton-logo.ico"  // Windows icon (ICO)
     },
     "linux": {
-      "target": "AppImage"
+      "target": "AppImage",
+      "icon": "assets/icons/krypton-logo.png"  // Linux icon (PNG)
     },
     "publish": null
   },
@@ -30,3 +34,4 @@
     "electron-builder": "^24.3.0"
   }
 }
+
