@@ -14,18 +14,18 @@
       "main.js",
       "package.json"
     ],
-    "icon": "assets/icons/krypton-logo",  // Path to your icon file (no extension)
+    "icon": "assets/icons/krypton-logo",  
     "mac": {
       "target": "dmg",
-      "icon": "assets/icons/krypton-logo.png"  // macOS icon (PNG)
+      "icon": "assets/icons/krypton-logo.png"  
     },
     "win": {
       "target": "nsis",
-      "icon": "assets/icons/krypton-logo.ico"  // Windows icon (ICO)
+      "icon": "assets/icons/krypton-logo.ico"  
     },
     "linux": {
       "target": "AppImage",
-      "icon": "assets/icons/krypton-logo.png"  // Linux icon (PNG)
+      "icon": "assets/icons/krypton-logo.png"  
     },
     "publish": null
   },
